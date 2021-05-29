@@ -20,18 +20,16 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-
 if (localStorage.getItem('topic') === null) {
     body.classList.add(Theme.LIGHT);
     localStorage.setItem('topic', Theme.LIGHT);
-
-    
 };
 
 if (localStorage.getItem('topic') === Theme.LIGHT) {
     body.classList.add(Theme.LIGHT);
 } else if (localStorage.getItem('topic') === Theme.DARK) {
     body.classList.add(Theme.DARK);
+    checkboxEl.checked = true;
 }
 
 checkboxEl.addEventListener('change', onChangeTopicClick);
